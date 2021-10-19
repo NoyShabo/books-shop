@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <header>
+        <div class="update-screen"></div>
+        <h1 data-trans="title">Book Shop </h1>
+
+        <section class="add-book input-group mb-3">
+            <input type='text' data-trans="book-name" placeholder="book name">
+            <input type='text' data-trans="price" placeholder="price">
+            <button class="btn btn btn-info" data-trans="add" onclick="onAddBook()">Add book</button>
+        </section>
+
+        <select class="sort" onchange="onSelectSort(this.value)">
+        <option selected disabled data-trans="sort" >Sort By</option>
+        <option value="name" data-trans="name">Name</option>
+        <option value="price" data-trans="price">Price</option>
+        <option value="rate" data-trans="rate">Rate</option>
+    </select>
+
+        <select class="language" onchange="onSelectLan(this.value)">
+        <option value="en" selected>English</option>
+        <option value="he"> עברית</option>
+    </select>
+    </header>
+
+
+    <!-- 
+    <select>
+        <option selected>Filter</option>
+        <option value="name">Name</option>
+        <option value="price">Price</option>
+        <option value="rate">Rate</option>
+    </select> -->
+    <section class="books-container"></section>
+
+
+    <div class="card  shadow p-3 mb-5 bg-white rounded" id="update-card" hidden>
+        <div class="card-body">
+            <h5 class="card-title" data-trans="update">Update</h5>
+            <p class="card-text" data-trans="update-price">Enter new price</p>
+            <input type='text' class="newPrice" data-trans="price" placeholder="price">
+            <button class="btn btn-outline-secondary  btn-warning" data-trans="update" onclick="onUpdaePrice()">Update</button>
+        </div>
+    </div>
+
+    <div class="read-book-info-modal"> </div>
+    <nav>
+        <ul class="pagination">
+        </ul>
+    </nav>
+
+    <footer>
+        <h6>&copf;Noy Shabo 2021</h6>
+    </footer>
+    <script src="./js/i18n-service.js"></script>
+    <script src="./js/util-service.js"></script>
+    <script src="./js/storage-service.js"></script>
+    <script src="./js/book-services.js"></script>
+    <script src="./js/book-controller.js"></script>
+</body>
+
+</html>
